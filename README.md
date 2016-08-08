@@ -4,15 +4,31 @@ Tools and utilities for the Twitter Ads Platform.
 
 Also useful, see https://github.com/twitterdev/ton-upload for using the TON API.
 
-Before using any of the Python tools/utilities be sure to do:
+## Installation
 
-```bash
-pip install -r python/requirements.pip
+Clone the repository:
+
+```
+$ git clone https://github.com/twitterdev/ads-platform-tools.git
+$ cd ads-platform-tools/
 ```
 
-## hash_tailored_audience_file
+If using the Python tools, install the following packages:
 
-Sample tools to hash data for tailored audience uploads, in either `Python` or `Perl`. Details on these normalization rules can be found [here](https://support.twitter.com/articles/20172017-tailored-audiences) or [here](https://dev.twitter.com/ads/audiences/file-data).
+```
+$ pip install -r python/requirements.pip
+```
+
+## Usage
+
+The following examples assume `ads-platform-tools/` is the working directory.
+
+### hash_tailored_audience_file
+
+Sample tools to hash data for tailored audience uploads, in either `Python` or
+`Perl`. Details on these normalization rules can be found
+[here](https://support.twitter.com/articles/20172017-tailored-audiences) or
+[here](https://dev.twitter.com/ads/audiences/file-data).
 
 Data types supported:
  - MOBILEDEVICEID
@@ -24,26 +40,40 @@ Data types supported:
  - TWITTERID
  - TWITTERSCREENNAME
 
+Python:
 
-Usage (Python):
-`./hash_tailored_audience_file.py --type EMAIL --infile /data/source_email_list.txt --outfile /data/hashed_email_list.txt`
+```
+$ python python/hash_tailored_audience_file.py --type EMAIL --infile path/to/emails_source.txt --outfile path/to/emails_hashed.txt
+```
 
-Usage (Perl):
-`./hash_tailored_audience_file.pl EMAIL /data/source_email_list.txt`
+Perl:
 
-## hash_mact_device
+```
+$ perl perl/hash_tailored_audience_file.pl EMAIL path/to/emails_source.txt
+```
 
-Sample script to debug the HMAC hashing of MACT device_ids. Input is a single, unhashed normalized device_id and output will include both the hashed device id and the hashed extra device id.
+### hash_mact_device
 
-Usage (Python):
-`./hash_mact_device.py --env prod --value abc123456789`
+Sample script to debug the HMAC hashing of MACT device_ids. Input is a single,
+unhashed normalized device_id and output will include both the hashed device id
+and the hashed extra device id.
 
-## fetch_stats
+Python:
 
-Sample script implementing [best practices](https://dev.twitter.com/ads/campaigns/analytics-best-practices) for pulling ads analytics for an advertiser account.
+```
+$ python python/hash_mact_device.py --env prod --value abc123456789
+```
 
-Usage (Python):
-`./fetch_stats.py -a abc1`
+### fetch_stats
+
+Sample script implementing [best practices](https://dev.twitter.com/ads/campaigns/analytics-best-practices)
+for pulling ads analytics for an advertiser account.
+
+Python:
+
+```
+$ python python/fetch_stats.py -a abc1
+```
 
 Params:
 
@@ -57,7 +87,6 @@ Params:
 Sample output:
 
 ```
-./fetch_stats.py -a abc1
 Best practices stats check for :account_id abc1
 -----------------------------------------------
 Current time:   2015-04-16 02:32:16.815510
