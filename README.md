@@ -27,8 +27,8 @@ The following examples assume `ads-platform-tools/` is the working directory.
 
 Sample tools to hash data for tailored audience uploads, in either `Python` or
 `Perl`. Details on these normalization rules can be found
-[here](https://support.twitter.com/articles/20172017-tailored-audiences) or
-[here](https://dev.twitter.com/ads/audiences/file-data).
+[here](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/tailored-audiences.html) or
+[here](https://developer.twitter.com/en/docs/ads/audiences/overview/file-data).
 
 Data types supported:
  - MOBILEDEVICEID
@@ -66,7 +66,7 @@ $ python python/hash_mact_device.py --env prod --value abc123456789
 
 ### fetch_stats
 
-Sample script implementing [best practices](https://dev.twitter.com/ads/campaigns/analytics-best-practices)
+Sample script implementing [best practices](https://developer.twitter.com/en/docs/ads/analytics/overview/best-practices)
 for pulling ads analytics for an advertiser account.
 
 Python:
